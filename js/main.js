@@ -10,7 +10,7 @@ async function display(mealList = fetchMeals()) {
     for(item of await mealList) {
         document.getElementById('cards').innerHTML += 
         `<div class='card'>
-            <a href='/html/recipe-meal.html?idMeal=${item.idMeal}'>
+            <a href='html/recipe-meal.html?idMeal=${item.idMeal}'>
             <img src='${item.strMealThumb}' alt='${item.strMeal}'/>
             <h2> ${item.strMeal} </h2>
             </a>
