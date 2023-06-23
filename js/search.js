@@ -1,6 +1,5 @@
-async function searchMeals() {
+async function searchMeals(userSearch) {
     const title = document.getElementById('title');
-    const userSearch = document.getElementById('searchField').value.trim();
 
     if(userSearch === '') {
         title.innerHTML = '<p>ALL RECIPES</p>';
@@ -31,3 +30,9 @@ async function searchMeals() {
     title.innerHTML = '';
 
 }
+let timer;
+const timeout = (event) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {searchMeals(event.target.value)}, 750)
+}
+
